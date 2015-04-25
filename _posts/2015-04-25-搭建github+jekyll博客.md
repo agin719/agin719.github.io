@@ -78,4 +78,7 @@ jekyll new myblog
 cd myblog
 ls
 {% endhighlight%}
-jekyll new myblog新建了一个myblog的文件夹。
+jekyll new myblog新建了一个myblog的文件夹。里面的_post文件夹存放我们的博客。
+我们可以用jekyll build命令来将_post文件里面的博客转换为html文件(相当于编译)。
+在jekyll serve启动本地服务器，在浏览器输入localhost:4000可以查看博客的内容。
+
