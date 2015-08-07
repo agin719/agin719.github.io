@@ -11,7 +11,9 @@ centos6.5默认是没无线驱动的，需要自己安装才能实现无线上�
 $ iwconfig
 lo        no wireless extensions.
 eth0      no wireless extensions.
-出现以上结果说明你没有安装，如果你已经装了网卡驱动并能实现无线上网就会有如下显示：
+{% endhighlight %}
+出现以上结果说明你没有安装，如果你已经装了网卡驱动并能实现无线上网就会有如下显示:
+{% highlight bash %}
 $ iwconfig
 lo        no wireless extensions.
 
@@ -45,6 +47,7 @@ $ uname -r
 我的内核是2.6.32，但是我下的Linux driver for kernel 2.6.24 (and later)这个版本没能装成功.后来这个Linux driver for kernel 2.6.23 (and earlier)版本就能安装成功。
 
 五、将下载的tar包进行编译安装。
+
 如果你直接进行make会反馈“make: *** /lib/modules/2.6.32-431.el6.x86_64/build：没有那个文件或目录”，而到ls /lib/modules/2.6.32-431.el6.x86_64/却发现存在build，那到底是发生什么事呢？通过 ls -l /lib/modules/2.6.32-431.el6.x86_64/发现build是一个连接文件，并指向/usr/src/kernels/2.6.32-431.el6.x86_64，但当前并没有该目录，因此使安装失败。而/usr/src/kernels/2.6.32-431.el6.x86_64里面放置的是编译时所需要的内核文件。所以先把所依赖的包安装了。
 {% highlight bash%}
 $sudo yum install gcc*
